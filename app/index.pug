@@ -1,0 +1,105 @@
+doctype html
+- let tabcontents= [{class__tab:'tab-1', class:'current', img:'./img/tabs-ipad.png', tab__content__title:'Lorem Ipsum is simply dummy text' , tab__content__description1: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.', tab__content__description2: 'It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'},{class__tab:'tab-2', img:'./img/tabs-ipad.png', tab__content__title:'Lorem Ipsum is simply dummy text22' , tab__content__description1: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', tab__content__description2:'Ipsum is simply dummy text of the printing and typesetting industry. Ipsum is simply dummy text of the printing and typesetting industry.'},{class__tab:'tab-3', img:'./img/tabs-ipad.png', tab__content__title:'Lorem Ipsum is simply dummy text333333' , tab__content__description1: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',tab__content__description2:'333Ipsum is simply dummy text of the printing and typesetting industry.'},{class__tab:'tab-4', img:'./img/tabs-ipad.png', tab__content__title:'Lorem Ipsum is simply dummy text444' , tab__content__description1: '444Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',tab__content__description2:'Ipsum is simply dummy text of the printing and typesetting industry.'}]
+include includes/footer__about-us.pug
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='initial-scale=1.0, width=device-width')
+        meta(http-equiv='X-UA-Compatible' content='ie=edge')
+        meta(name='description' content='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s')
+        meta(name='title' content='Leo/-')
+        meta(name='keywords' content='leo, Lorem, LEO, ipsum')
+        meta(name='og:title' content='Leo/-')
+        meta(name='og:description' content='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s')
+        link(rel='stylesheet' href='css/main.css')
+        link(rel='stylesheet', type='text/css', href='libs/slick/slick.css')
+        link(rel='stylesheet', type='text/css', href='libs/slick/slick-theme.css')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+        title leo/-
+    body
+        header.header
+            .container.header__container
+                a.logo Leo/-
+                nav.menu
+                    - let menus = [{link: '.solution', text: 'Solution'},{link: '.products', text: 'Products'},{link: '.portfolio', text: 'Portfolio'},{link: '.contact', text: 'Contact'}]
+                    ul.menu__wrap
+                        each menu, i in menus
+                            li.menu__item
+                                a.menu__link(href=menu.link)=menu.text
+            .header__main
+                .center.slider
+                    - let slides = [{img:'./img/slide-1.png', header__heading:'Introducing', header__paragraph:'Something hot....'}, {img:'./img/slide-2.png', header__heading:'End', header__paragraph:'Something new....'}]
+                    each slide, i in slides
+                        .header__item
+                            .header__view
+                                img(src=slide.img alt="")
+                            .header__description
+                                .header__text
+                                    h2.header__heading=slide.header__heading
+                                    p.header__paragraph=slide.header__paragraph
+                                button.header__button
+                                    span Try Demo
+        section.tab
+            - let tabs= [{class:'current', img:'./img/tabs-responsive.png', tab__heading: 'Responsive', tab__description: 'Websites', data_tab:'tab-1'},{img:'./img/tabs-ecommers.png', tab__heading: 'e Commerce', tab__description: 'Websites', data_tab:'tab-2'},{img:'./img/tabs-blog.png', tab__heading: 'Daily blog', tab__description: 'Websites', data_tab:'tab-3'},{img:'./img/tabs-search.png', tab__heading: 'Search based', tab__description: 'Websites', data_tab:'tab-4'}]
+            .container.tab__container
+                ul.tabs
+                    each tab, i in tabs
+                        li.tab__link(class=tab.class , data-tab=tab.data_tab)
+                            img(src=tab.img alt="")
+                            .tab__name
+                                span.tab__name--heading=tab.tab__heading
+                                p.tab__name--description=tab.tab__description
+                each tabcontent, i in tabcontents
+                    div(class=tabcontent.class__tab).tab__content(class=tabcontent.class)
+                        .tab__image--wraper
+                            img.img-responsive(src=tabcontent.img alt="")
+                        h2.tab__content__title=tabcontent.tab__content__title
+                        p.tab__content__description=tabcontent.tab__content__description1
+                        p.tab__content__description=tabcontent.tab__content__description2
+        section.choose
+            - let choose__lists= [{choose__list: 'Lorem Ipsum is simply dummy text of the printing and types'},{choose__list: 'Lorem Ipsum has been the industry\'s standard dummy text ever'},{choose__list: 'When an unknown printer took a galley of type and scrambled'},{choose__list: 'It has survived not only five centuries, but also the leap into electronic'},{choose__list: 'It was popularised in the 1960s with the release of Letraset sheets containing'},{choose__list: 'More recently with desktop publishing software like Aldus PageMaker'}]
+            .container.choose--container
+                .choose__item
+                    img(src="./img/screenshot.png" alt="")
+                .choose__item
+                    .choose__description
+                        h3.choose__heading Why choose us ?
+                        ul.choose__list
+                            each choose__list, i in choose__lists
+                                li.choose__list__item=choose__list.choose__list
+        hr.footer__line
+        footer.footer
+            .footer__top
+                .container
+                    .footer__item--50.footer__item--login
+                        h3.footer__item--title Member login
+                        .footer__item--50__form
+                            input.footer__item--input(placeholder="User name")
+                            input.footer__item--input(placeholder="Password")
+                            input.login--button.button(type="button" value="Log me in.")
+                    .footer__item--50.footer__item--subscribe
+                        h3.footer__item--title Subscribe to our weekly newsletter
+                        .footer__item--50__form
+                            input.footer__item--input.subscribe--input(placeholder="email address")
+                            input.subscribe--button.button(type="button" value="Subscribe")
+            .footer__bottom
+                - let footer__links= [{footer__link: 'About us'},{footer__link: 'Why us'},{footer__link: 'Customer Stories'},{footer__link: 'Press Resources'},{footer__link: 'Press Releases'},{footer__link: 'Contact us'}]
+                .container
+                    +footer__item--20
+                    +footer__item--20
+                    .footer__item--30
+                        .footer__slide
+                            h4.footer__item__title Testimoanials
+                        - let footer__slides = [{footer_item__text:'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industr standard dummy text ever since the 1500s, when an unknown printer took a', footer_item__info:'Lorem Ipsum is simply', footer_item__info2:'Owner, Lorem Ipsum'}, {footer_item__text:'When an unknown printer took a galley of type and scrambled. It has survived not only five centuries, but also the leap into electronic.', footer_item__info:'like Aldus PageMaker', footer_item__info2:'Lorem Ipsum'}]
+                        .footer__slider.slider
+                            each footer__slide, i in footer__slides
+                                .footer__slider__item
+                                    p.footer_item__text=footer__slide.footer_item__text
+                                    span.footer_item__info=footer__slide.footer_item__info
+                                    span.footer_item__info=footer__slide.footer_item__info2
+                    .footer__item--auto
+                        a.logo.logo--footer Leo/-
+                        p.footer__author ©
+                            a  cssauthor.com
+        script(src='js/main.js')
+        script(src='libs/slick/slick.js')

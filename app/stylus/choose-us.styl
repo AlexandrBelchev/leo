@@ -1,0 +1,27 @@
+.choose
+  padding 22px 0 56px 0
+  &--container
+    display flex
+    flex-wrap wrap
+    justify-content center
+  &__heading
+    font-size 33px
+    color #4f4f4f
+    font-weight 300
+    margin-bottom 30px
+  &__list
+    list-style-image url("../img/list1.png")
+    font-size 16px
+    color #8a8888
+    padding-left 25px
+.choose__list__item + .choose__list__item
+  margin 5px 0
+
+@media (min-width: 960px)
+  .choose--container
+    flex-wrap nowrap
+@media (min-width: 1200px)
+  .choose__list__item + .choose__list__item
+    margin 15px 0
+  .choose__description
+    padding-top 30px

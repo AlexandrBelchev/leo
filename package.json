@@ -1,0 +1,44 @@
+{
+  "name": "content2",
+  "version": "1.0.0",
+  "description": "content2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "cont",
+  "license": "ISC",
+  "dependencies": {
+    "gulp-html-prettify": "0.0.1",
+    "gulp-nunjucks-render": "^2.2.2",
+    "nunjucks": "^3.0.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-cache": "^1.0.2",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-nunjucks": "^3.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-stylus": "^2.7.0",
+    "imagemin-pngquant": "^5.0.1",
+    "pug": "^2.0.0-rc.4",
+    "stylus": "^0.54.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexandrBelchev/content2.git"
+  },
+  "keywords": [
+    "content2"
+  ],
+  "bugs": {
+    "url": "https://github.com/AlexandrBelchev/content2/issues"
+  },
+  "homepage": "https://github.com/AlexandrBelchev/content2#readme"
+}

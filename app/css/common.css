@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: segoewp, 'Arial';
+  font-size: 16px;
+  overflow-x: hidden;
+}
+p {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  margin: 0;
+}
+hr {
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+h2 {
+  text-align: center;
+  width: 100%;
+}
+a {
+  cursor: pointer;
+}
+.container {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.logo {
+  font-family: MrsEavesItalic;
+  opacity: 0.68;
+  color: #fff;
+  font-size: 119px;
+  font-weight: 400;
+  line-height: 95px;
+  font-style: italic;
+}
+@media (min-width: 720px) {
+  .container {
+    width: 690px;
+  }
+}
+@media (min-width: 960px) {
+  .container {
+    width: 930px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+@media (max-width: 960px) {
+  .img-responsive {
+    width: 100%;
+  }
+}
