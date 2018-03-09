@@ -1,5 +1,34 @@
 doctype html
-- let tabcontents= [{class__tab:'tab-1', class:'current', img:'./img/tabs-ipad.png', tab__content__title:'Lorem Ipsum is simply dummy text' , tab__content__description1: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.', tab__content__description2: 'It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'},{class__tab:'tab-2', img:'./img/tabs-ipad.png', tab__content__title:'Lorem Ipsum is simply dummy text22' , tab__content__description1: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', tab__content__description2:'Ipsum is simply dummy text of the printing and typesetting industry. Ipsum is simply dummy text of the printing and typesetting industry.'},{class__tab:'tab-3', img:'./img/tabs-ipad.png', tab__content__title:'Lorem Ipsum is simply dummy text333333' , tab__content__description1: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',tab__content__description2:'333Ipsum is simply dummy text of the printing and typesetting industry.'},{class__tab:'tab-4', img:'./img/tabs-ipad.png', tab__content__title:'Lorem Ipsum is simply dummy text444' , tab__content__description1: '444Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',tab__content__description2:'Ipsum is simply dummy text of the printing and typesetting industry.'}]
+-
+    let tabcontents= [
+        {
+            class__tab:'tab-1',
+            class:'current',
+            img:'./img/tabs-ipad.png',
+            tab__content__title:'Lorem Ipsum is simply dummy text' ,
+            tab__content__description1: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+            tab__content__description2: 'It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
+        },
+        {
+            class__tab:'tab-2',
+            img:'./img/tabs-ipad.png',
+            tab__content__title:'Lorem Ipsum is simply dummy text22' ,
+            tab__content__description1: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            tab__content__description2:'Ipsum is simply dummy text of the printing and typesetting industry. Ipsum is simply dummy text of the printing and typesetting industry.'
+        },
+        {   class__tab:'tab-3',
+            img:'./img/tabs-ipad.png',
+            tab__content__title:'Lorem Ipsum is simply dummy text333333' ,
+            tab__content__description1: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            tab__content__description2:'333Ipsum is simply dummy text of the printing and typesetting industry.'
+        },
+        {   class__tab:'tab-4',
+            img:'./img/tabs-ipad.png',
+            tab__content__title:'Lorem Ipsum is simply dummy text444' ,
+            tab__content__description1: '444Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            tab__content__description2:'Ipsum is simply dummy text of the printing and typesetting industry.'
+        }
+    ]
 include includes/footer__about-us.pug
 html(lang='en')
     head
@@ -21,14 +50,43 @@ html(lang='en')
             .container.header__container
                 a.logo Leo/-
                 nav.menu
-                    - let menus = [{link: '.solution', text: 'Solution'},{link: '.products', text: 'Products'},{link: '.portfolio', text: 'Portfolio'},{link: '.contact', text: 'Contact'}]
+                    -
+                        let menus = [
+                            {
+                                link: '.solution',
+                                text: 'Solution'
+                            },
+                            {
+                                link: '.products',
+                                text: 'Products'
+                            },
+                            {
+                                link: '.portfolio',
+                                text: 'Portfolio'
+                            },
+                            {
+                                link: '.contact',
+                                text: 'Contact'
+                            }
+                        ]
                     ul.menu__wrap
                         each menu, i in menus
                             li.menu__item
                                 a.menu__link(href=menu.link)=menu.text
             .header__main
                 .center.slider
-                    - let slides = [{img:'./img/slide-1.png', header__heading:'Introducing', header__paragraph:'Something hot....'}, {img:'./img/slide-2.png', header__heading:'End', header__paragraph:'Something new....'}]
+                    -
+                        let slides = [
+                            {
+                                img:'./img/slide-1.png',
+                                header__heading:'Introducing',
+                                header__paragraph:'Something hot....'
+                            },
+                            {   img:'./img/slide-2.png',
+                                header__heading:'End',
+                                header__paragraph:'Something new....'
+                            }
+                        ]
                     each slide, i in slides
                         .header__item
                             .header__view
@@ -40,7 +98,34 @@ html(lang='en')
                                 button.header__button
                                     span Try Demo
         section.tab
-            - let tabs= [{class:'current', img:'./img/tabs-responsive.png', tab__heading: 'Responsive', tab__description: 'Websites', data_tab:'tab-1'},{img:'./img/tabs-ecommers.png', tab__heading: 'e Commerce', tab__description: 'Websites', data_tab:'tab-2'},{img:'./img/tabs-blog.png', tab__heading: 'Daily blog', tab__description: 'Websites', data_tab:'tab-3'},{img:'./img/tabs-search.png', tab__heading: 'Search based', tab__description: 'Websites', data_tab:'tab-4'}]
+            -
+                let tabs= [
+                    {
+                        class:'current',
+                        img:'./img/tabs-responsive.png',
+                        tab__heading: 'Responsive',
+                        tab__description: 'Websites',
+                        data_tab:'tab-1'
+                    },
+                    {
+                        img:'./img/tabs-ecommers.png',
+                        tab__heading: 'e Commerce',
+                        tab__description: 'Websites',
+                        data_tab:'tab-2'
+                    },
+                    {
+                        img:'./img/tabs-blog.png',
+                        tab__heading: 'Daily blog',
+                        tab__description: 'Websites',
+                        data_tab:'tab-3'
+                    },
+                    {
+                        img:'./img/tabs-search.png',
+                        tab__heading: 'Search based',
+                        tab__description: 'Websites',
+                        data_tab:'tab-4'
+                    }
+                ]
             .container.tab__container
                 ul.tabs
                     each tab, i in tabs
@@ -57,7 +142,27 @@ html(lang='en')
                         p.tab__content__description=tabcontent.tab__content__description1
                         p.tab__content__description=tabcontent.tab__content__description2
         section.choose
-            - let choose__lists= [{choose__list: 'Lorem Ipsum is simply dummy text of the printing and types'},{choose__list: 'Lorem Ipsum has been the industry\'s standard dummy text ever'},{choose__list: 'When an unknown printer took a galley of type and scrambled'},{choose__list: 'It has survived not only five centuries, but also the leap into electronic'},{choose__list: 'It was popularised in the 1960s with the release of Letraset sheets containing'},{choose__list: 'More recently with desktop publishing software like Aldus PageMaker'}]
+            -
+                let choose__lists= [
+                    {
+                        choose__list: 'Lorem Ipsum is simply dummy text of the printing and types'
+                    },
+                    {
+                        choose__list: 'Lorem Ipsum has been the industry\'s standard dummy text ever'
+                    },
+                    {
+                        choose__list: 'When an unknown printer took a galley of type and scrambled'
+                    },
+                    {
+                        choose__list: 'It has survived not only five centuries, but also the leap into electronic'
+                    },
+                    {
+                        choose__list: 'It was popularised in the 1960s with the release of Letraset sheets containing'
+                    },
+                    {
+                        choose__list: 'More recently with desktop publishing software like Aldus PageMaker'
+                    }
+                ]
             .container.choose--container
                 .choose__item
                     img(src="./img/screenshot.png" alt="")
@@ -83,14 +188,46 @@ html(lang='en')
                             input.footer__item--input.subscribe--input(placeholder="email address")
                             input.subscribe--button.button(type="button" value="Subscribe")
             .footer__bottom
-                - let footer__links= [{footer__link: 'About us'},{footer__link: 'Why us'},{footer__link: 'Customer Stories'},{footer__link: 'Press Resources'},{footer__link: 'Press Releases'},{footer__link: 'Contact us'}]
+                -
+                    let footer__links= [
+                        {
+                            footer__link: 'About us'
+                        },
+                        {
+                            footer__link: 'Why us'
+                        },
+                        {
+                            footer__link: 'Customer Stories'
+                        },
+                        {
+                            footer__link: 'Press Resources'
+                        },
+                        {
+                            footer__link: 'Press Releases'
+                        },
+                        {
+                            footer__link: 'Contact us'
+                        }
+                    ]
                 .container
                     +footer__item--20
                     +footer__item--20
                     .footer__item--30
                         .footer__slide
                             h4.footer__item__title Testimoanials
-                        - let footer__slides = [{footer_item__text:'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industr standard dummy text ever since the 1500s, when an unknown printer took a', footer_item__info:'Lorem Ipsum is simply', footer_item__info2:'Owner, Lorem Ipsum'}, {footer_item__text:'When an unknown printer took a galley of type and scrambled. It has survived not only five centuries, but also the leap into electronic.', footer_item__info:'like Aldus PageMaker', footer_item__info2:'Lorem Ipsum'}]
+                        -
+                            let footer__slides = [
+                                {
+                                    footer_item__text:'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industr standard dummy text ever since the 1500s, when an unknown printer took a',
+                                    footer_item__info:'Lorem Ipsum is simply',
+                                    footer_item__info2:'Owner, Lorem Ipsum'
+                                },
+                                {
+                                    footer_item__text:'When an unknown printer took a galley of type and scrambled. It has survived not only five centuries, but also the leap into electronic.',
+                                    footer_item__info:'like Aldus PageMaker',
+                                    footer_item__info2:'Lorem Ipsum'
+                                }
+                            ]
                         .footer__slider.slider
                             each footer__slide, i in footer__slides
                                 .footer__slider__item
